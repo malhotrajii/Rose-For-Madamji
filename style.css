@@ -9,27 +9,52 @@ body {
 
 p {
   font-family: "Merriweather", serif;
-
-  font-size: 16px; /* Adjusts size for readability */
-  line-height: 1.6; /* Improves spacing */
-  color: #e71010; /* Sets a readable text color */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e71010;
   text-align: center;
 }
 
-/* For mobile screens */
-@media (max-width: 480px) {
-  p {
-    font-size: 14px; /* Adjusts font size for smaller screens */
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    transform: scale(0.5);
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform-origin: center center;
+    transform: scale(0.5) translateX(-50%);
   }
 }
 
 @media (max-width: 480px) {
   p {
-    font-size: 14px; /* Slightly smaller font for very small screens */
-    margin: 8px 10px; /* Adjusts margin for small screens */
+    font-size: 14px;
+    margin: 8px 10px;
+  }
+
+  .container {
+    transform: scale(0.4);
+    transform-origin: center center;
+    transform: scale(0.4) translateX(-50%);
   }
 }
 
+@media (max-width: 320px) {
+  .container {
+    transform: scale(0.3);
+    transform-origin: center center;
+    transform: scale(0.3) translateX(-50%);
+  }
+}
+
+/* Rest of the original CSS remains unchanged */
 .container {
   width: 100px;
   height: 300px;
@@ -44,6 +69,8 @@ p {
   -webkit-transform: scale(0.6);
   transform: scale(0.6);
 }
+
+/* Remaining CSS from the original file... */
 .container div {
   position: absolute;
 }
